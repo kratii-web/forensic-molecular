@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FMLIS - Forensic Molecular Laboratory Information System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#bac7e1",
+                      "secondary-container": "#8fa7fe",
+                      "outline": "#75777d",
+                      "on-tertiary-container": "#0c9488",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#d6e3fe",
+                      "on-primary": "#ffffff",
+                      "primary": "#000000",
+                      "inverse-primary": "#bac7e1",
+                      "inverse-surface": "#213145",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed": "#dce1ff",
+                      "surface-tint": "#525f75",
+                      "on-background": "#0b1c30",
+                      "tertiary-container": "#00201d",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed-variant": "#264191",
+                      "on-surface": "#0b1c30",
+                      "secondary-fixed-dim": "#b6c4ff",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-fixed": "#0e1c2f",
+                      "on-surface-variant": "#44474c",
+                      "primary-container": "#0e1c2f",
+                      "tertiary": "#000000",
+                      "outline-variant": "#c5c6cd",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "error": "#ba1a1a",
+                      "secondary": "#4059aa",
+                      "on-secondary-fixed": "#00164e",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#1d3989",
+                      "surface": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#77849c",
+                      "tertiary-fixed": "#89f5e7",
+                      "background": "#f8f9ff",
+                      "surface-container": "#e5eeff",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "on-primary-fixed-variant": "#3a475c",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#00201d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "container-margin": "24px",
+                      "sidebar-width": "260px",
+                      "gutter": "16px",
+                      "table-cell-padding": "12px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .clinical-bg {
+            background-color: #F8FAFC;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md clinical-bg min-h-screen flex items-center justify-center p-4">
+<!-- Suppression of Shell Components based on Task-Focused / Linear Transactional Intent (Login) -->
+<div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<!-- Branding and Features Column -->
+<div class="space-y-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-4">
+                    Forensic Molecular Laboratory Information System
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Digital case management for PCR and RT-PCR laboratory records. Engineered for high-precision forensic environments where data integrity and clarity are paramount.
+                </p>
+</div>
+<div class="space-y-6">
+<!-- Feature 1 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="folder_special">folder_special</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-background">Organize</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Systematic categorization of complex molecular case files with absolute reliability.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="manage_search">manage_search</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-background">Retrieve</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rapid, secure access to historical PCR data and audit trails.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="compare">compare</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-background">Compare</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-fidelity split-pane views for baseline sample analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Login Form Column -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-8 shadow-sm">
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md text-on-background">Secure Access</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Authentication required for laboratory staff.</p>
+</div>
+<form class="space-y-6">
+<!-- Laboratory ID -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1" for="lab-id">Laboratory ID</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-outline">
+<span class="material-symbols-outlined text-body-lg" data-icon="badge">badge</span>
+</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-data-mono text-data-mono text-on-background transition-colors" id="lab-id" name="lab-id" placeholder="LAB-XXX-YYYY" type="text"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-outline">
+<span class="material-symbols-outlined text-body-lg" data-icon="lock">lock</span>
+</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-body-md text-body-md text-on-background transition-colors" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Security Notice -->
+<div class="flex items-center gap-2 p-3 bg-surface-container-low border border-outline-variant rounded-md">
+<span class="material-symbols-outlined text-secondary text-body-lg" data-icon="security">security</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Connection is encrypted. Unauthorized access is strictly prohibited.</p>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-[#0D9488] text-white font-body-md text-body-md font-semibold py-3 px-4 rounded hover:bg-[#0f766e] transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0D9488]" type="submit">
+<span class="material-symbols-outlined text-body-lg" data-icon="login">login</span>
+                    Login to Laboratory System
+                </button>
+</form>
+<div class="mt-6 pt-4 border-t border-outline-variant text-center">
+<p class="font-body-sm text-body-sm text-outline">System Version 4.2.1-SECURE | Environment: Production</p>
+</div>
+</div>
+</div>
+</body></html>
