@@ -6,13 +6,15 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ badge, password }),
@@ -24,7 +26,6 @@ const Login = () => {
         throw new Error(data.error || 'Login failed');
       }
 
-      // Handle successful login (e.g., save token, redirect)
       localStorage.setItem('token', data.token);
       alert(`Welcome, ${data.user.name}`);
       // window.location.href = '/dashboard';
@@ -35,6 +36,7 @@ const Login = () => {
     }
   };
 
+  return (
     <div className="bg-background text-on-background font-body-md clinical-bg min-h-screen flex items-center justify-center p-4">
       {/* Suppression of Shell Components based on Task-Focused / Linear Transactional Intent (Login) */}
       <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -106,11 +108,11 @@ const Login = () => {
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-outline">
                   <span className="material-symbols-outlined text-body-lg" data-icon="badge">badge</span>
                 </span>
-                <input 
-                  className="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-data-mono text-data-mono text-on-background transition-colors" 
-                  id="lab-id" 
-                  name="lab-id" 
-                  placeholder="LAB-XXX-YYYY" 
+                <input
+                  className="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-data-mono text-data-mono text-on-background transition-colors"
+                  id="lab-id"
+                  name="lab-id"
+                  placeholder="LAB-XXX-YYYY"
                   type="text"
                   value={badge}
                   onChange={(e) => setBadge(e.target.value)}
@@ -126,11 +128,11 @@ const Login = () => {
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-outline">
                   <span className="material-symbols-outlined text-body-lg" data-icon="lock">lock</span>
                 </span>
-                <input 
-                  className="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-body-md text-body-md text-on-background transition-colors" 
-                  id="password" 
-                  name="password" 
-                  placeholder="••••••••" 
+                <input
+                  className="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container font-body-md text-body-md text-on-background transition-colors"
+                  id="password"
+                  name="password"
+                  placeholder="••••••••"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -146,8 +148,8 @@ const Login = () => {
             </div>
 
             {/* Submit Button */}
-            <button 
-              className="w-full bg-[#0D9488] text-white font-body-md text-body-md font-semibold py-3 px-4 rounded hover:bg-[#0f766e] transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0D9488] disabled:opacity-70" 
+            <button
+              className="w-full bg-[#0D9488] text-white font-body-md text-body-md font-semibold py-3 px-4 rounded hover:bg-[#0f766e] transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0D9488] disabled:opacity-70"
               type="submit"
               disabled={loading}
             >
